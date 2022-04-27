@@ -15,15 +15,15 @@ gcc .\wol.c .\settings.c -o wol.exe -l ws2_32
 
 Saving a computer on the __settings.ini__ file:
 ```
-.\wol save [COMPUTER NAME] [MAC ADDRESS]
+.\wol.exe save [COMPUTER NAME] [MAC ADDRESS]
 ```
 Waking a computer saved on the __settings.ini__ file:
 ```
-.\wol wake [COMPUTER NAME]
+.\wol.exe wake [COMPUTER NAME]
 ```
 Waking a computer via it's MAC address:
 ```
-.\wol wake mac [MAC ADDRESS]
+.\wol.exe wake mac [MAC ADDRESS]
 ```
 Changing the WOL port, the broadcast address and deleting computers:
 - Can only be done manually for now. Edit the __settings.ini__ file with a text editor (and try not to delete any blank space, it can - and probably will - break stuff 😞).
@@ -34,3 +34,4 @@ Changing the WOL port, the broadcast address and deleting computers:
 - [ ] refactor some bad code (most of the program really);
 - [ ] try to find a better solution for searching the settings file;
 - [ ] maybe compiling for linux?
+x

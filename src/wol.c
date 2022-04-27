@@ -150,6 +150,4 @@ void wake_on_lan(char *mac_string, const char *port_string, const char *broadcas
 
     sendto(sock, &packet_buffer, sizeof(packet_buffer), 0,
            (struct sockaddr *)&destination_in, sizeof(destination_in));
-
-    return 0;
 }
