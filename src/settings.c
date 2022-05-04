@@ -15,7 +15,6 @@ int settings_template_handler()
 {
     FILE *file_ptr;
     file_ptr = fopen(__SETTINGSPATH__, "r");
-    int i;
 
     if (file_ptr == NULL)
     {
@@ -23,11 +22,9 @@ int settings_template_handler()
         // printf("\"settings.ini\" file not detected or could not be oppened. Creating a new file...\n");
         if ((file_ptr = fopen(__SETTINGSPATH__, "w")))
         {
-            /* it is written like this in case I need to expand the template in the future.*/
-            const char settings_template[3][__MAXCHAR__] = {"BROADCAST = 255.255.255.255\nPORT = 9\n[SAVED COMPUTERS]"};
+            const char settings_template[1][__MAXCHAR__] = {"BROADCAST = 255.255.255.255\nPORT = 9\n[SAVED COMPUTERS]"};
 
-            for (i = 0; i < 1; i++)
-                fputs(settings_template[i], file_ptr);
+            fputs(settings_template[0], file_ptr);
 
             fclose(file_ptr);
 
@@ -91,7 +88,12 @@ void add_computer(char *computer, char *mac_address)
     int i;
     FILE *file_ptr;
     file_ptr = fopen(__SETTINGSPATH__, "a");
-    char computer_str[4][__MAXCHAR__] = {"\n", "", " = ", "",};
+    char computer_str[4][__MAXCHAR__] = {
+        "\n",
+        "",
+        " = ",
+        "",
+    };
 
     strcpy(computer_str[1], computer);
     strcpy(computer_str[3], mac_address);
