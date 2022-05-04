@@ -24,7 +24,7 @@ int settings_template_handler()
         if ((file_ptr = fopen(__SETTINGSPATH__, "w")))
         {
             /* it is written like this in case I need to expand the template in the future.*/
-            const char settings_template[3][__MAXCHAR__] = {"BROADCAST = 255.255.255.255\nPORT = 9\n[SAVED COMPUTERS]\n"};
+            const char settings_template[3][__MAXCHAR__] = {"BROADCAST = 255.255.255.255\nPORT = 9\n[SAVED COMPUTERS]"};
 
             for (i = 0; i < 1; i++)
                 fputs(settings_template[i], file_ptr);
@@ -91,10 +91,10 @@ void add_computer(char *computer, char *mac_address)
     int i;
     FILE *file_ptr;
     file_ptr = fopen(__SETTINGSPATH__, "a");
-    char computer_str[4][__MAXCHAR__] = {"", " = ", "", "\n"};
+    char computer_str[4][__MAXCHAR__] = {"\n", "", " = ", "",};
 
-    strcpy(computer_str[0], computer);
-    strcpy(computer_str[2], mac_address);
+    strcpy(computer_str[1], computer);
+    strcpy(computer_str[3], mac_address);
 
     for (i = 0; i < 4; i++)
         fputs(computer_str[i], file_ptr);

@@ -41,6 +41,11 @@ int main(int argc, char *argv[])
             {
                 if ((argv[2]) && (argv[3]) && (strlen(argv[3]) >= 17))
                 {
+                    if (settings_file_search(argv[2]))
+                    {
+                        printf("\"%s\" already on settings.ini. Please choose another name.", argv[2]);
+                        exit(-1);
+                    }
                     add_computer(argv[2], argv[3]);
                     printf("Saved \"%s\" as \"%s\" in settings.ini", argv[2], argv[3]);
 
