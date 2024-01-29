@@ -2,7 +2,7 @@
 A WOL magic packet sender made with C.
 
 Made as a learning project; I strongly advise against the use of this program. There are many way better (and actually finished) alternatives already on GitHub.
-It doesn't handle errors (yet) and will probably brick your computer if you do something unexpected, but besides that, it does work! 😉
+It doesn't handle errors (yet) and will probably brick your computer if you do something stupid... Besides that, it does work! 😉
 
 ## How to compile:
 Compile it on Windows using MinGW:
@@ -30,8 +30,7 @@ Changing the WOL port, the broadcast address and deleting computers:
 
 ## TO-DO:
 - [ ] actual error handling;
-- [ ] editing the settings file from within the program (delete computers, change the broadcast address/WOL port);
+- [ ] ~~editing the settings file from within the program (delete computers, change the broadcast address/WOL port);~~ (probably too dangerous to be implemented by a moron)
 - [ ] refactor some bad code (most of the program really);
 - [ ] try to find a better solution for searching the settings file;
-- [ ] maybe compiling for linux?
-x
+- [ ] compiling for linux? (most important part)
